@@ -21,6 +21,8 @@ Lalu masukkan syntax ini pada terminal directory project
             {
                 Schema::defaultStringLength(191);
             }
+            
+            
         *  drop column yang sudah terbentuk lalu jalankan        php artisan migrate
 -        php artisan serve
 - buka ink yang tertera pada terminal, misalkan : Starting Laravel development server: http://127.0.0.1:8000 (mengikuti masing masing perangkat)
