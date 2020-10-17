@@ -14,12 +14,13 @@ Lalu masukkan syntax ini pada terminal directory project
   Kalau saat php artisan migrate muncul error :
     SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique              `users_email_unique`(`email`))
         *  buka AppServiceProvider.php
-        *  tambahkan :
+        *  tambahkan import dan schema pada function boot():
         
         use Illuminate\Support\Facades\Schema;
             function boot()
             {
                 Schema::defaultStringLength(191);
             }
-            
-- php artisan serve
+        *  drop column yang sudah terbentuk lalu jalankan        php artisan migrate
+-        php artisan serve
+- buka ink yang tertera pada terminal, misalkan : Starting Laravel development server: http://127.0.0.1:8000 (mengikuti masing masing perangkat)
