@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "d395141d-f745-4b3d-a4dd-ae372cb02c85",
+		"name": "WebSemantik",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetOneUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/getOneUser/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"getOneUser",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/deleteUser/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"deleteUser",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/updateUser/2/?first_name=Ebin&last_name=2&email=ubin@email.com&gender=Perempuan",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"updateUser",
+						"2",
+						""
+					],
+					"query": [
+						{
+							"key": "first_name",
+							"value": "Ebin"
+						},
+						{
+							"key": "last_name",
+							"value": "2"
+						},
+						{
+							"key": "email",
+							"value": "ubin@email.com"
+						},
+						{
+							"key": "gender",
+							"value": "Perempuan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/insertUser?first_name=Ubin&last_name=Ubinnn&email=ubin@email.com&gender=Perempuan",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"insertUser"
+					],
+					"query": [
+						{
+							"key": "first_name",
+							"value": "Ubin"
+						},
+						{
+							"key": "last_name",
+							"value": "Ubinnn"
+						},
+						{
+							"key": "email",
+							"value": "ubin@email.com"
+						},
+						{
+							"key": "gender",
+							"value": "Perempuan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/getAllUser",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"getAllUser"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
