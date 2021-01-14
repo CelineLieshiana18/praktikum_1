@@ -52,8 +52,8 @@
                                 </div><!-- /.col -->
                             </div><!-- /.row -->
                         </div><!-- /.container-fluid -->
-                        </div>
-                        <!-- /.content-header -->
+                    </div>
+                    <!-- /.content-header -->
 
                         <!-- Main content -->
                         <div class="content">
@@ -87,13 +87,31 @@
                                                     <option value="Perempuan">Perempuan</option>
                                                     <option value="Laki-Laki">Laki-Laki</option>
                                                 </select>
-                                                {{-- <input name="gender" type="text" class="form-control" id="gender" placeholder="Male" required/> --}}
                                             </div>
                                         </div>
                                     <!-- /.card-body -->
                                     <div class="card-footer">
                                         <button style="width:100%" type="submit" class="btn btn-primary">Submit</button>
                                     </div>
+                                    </form>
+                                    <form action="{{ route('client2POST') }}" method="POST">
+                                        @csrf
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <label for="name">Nama</label>
+                                                <input name="nama" type="text" class="form-control" id="nama" placeholder="John" required/>
+                                            </div>
+                                        </div>
+                                        <!-- /.card-body -->
+                                        <div class="card-footer">
+                                            <button style="width:100%" type="submit" class="btn btn-primary">Client 2</button>
+                                        </div>
+                                    </form>
+                                    <form action="{{ route('server2') }}" method="GET">
+                                        <!-- /.card-body -->
+                                        <div class="card-footer">
+                                            <button style="width:100%" type="submit" class="btn btn-primary">Server 2</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

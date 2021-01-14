@@ -102,5 +102,23 @@ class UserController extends Controller
         return json_encode($result);
     }
 
+    public function client2POST(Request $request)
+    {
+        return redirect('/client2/'.$request->nama);
+    }
+
+    public function client2($nama)
+    {
+        $send = [
+            'nama'=>$nama
+        ];
+        return view('client2')->with($send);
+    }
+
+    public function server2()
+    {
+        return view('server2');
+    }
+
     ///////////////////End of API/////////////////////
 }
