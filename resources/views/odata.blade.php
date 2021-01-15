@@ -48,163 +48,67 @@
                         <div class="container-fluid">
                             <div class="row mb-2">
                                 <div style="text-align:center;width:100%;">
-                                    {{-- <h1 class="m-0 text-dark">Data User</h1> --}}
+                                    <h1 class="m-0 text-dark">ODATA</h1>
                                 </div><!-- /.col -->
                             </div><!-- /.row -->
                         </div><!-- /.container-fluid -->
                     </div>
+                    
+                    <div class="container-fluid" style="align-items: center" align="center">
+                        <div  class="card-footer" style="width: 90%; align:center;">
+                            <form action="{{ route('Odata') }}" method="POST">
+                                @csrf
+                                <div class="card-body">
+                                    <div class="form-group" style="text-align: left;">
+                                        <label for="name">Nama</label>
+                                        <input name="nama" type="text" class="form-control" id="nama" placeholder="russellwhyte or scottketchum or ronaldmundy or javieralfred etc." required/>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                                <div>
+                                    <button style="width:100%" type="submit" class="btn btn-warning">Cari</button>
+                                </div>
+                                <br/>
+                            </form>
+                            
+                            <form action="{{ route('allPeople') }}" method="GET">
+                                <!-- /.card-body -->
+                                <div>
+                                    <button style="width:100%" type="submit" class="btn btn-warning">Data All People</button>
+                                </div>
+                            </form>
+                            <br/>
+                            <form action="{{ route('index') }}" method="GET">
+                                <!-- /.card-body -->
+                                <div>
+                                    <button style="width:100%" type="submit" class="btn btn-warning">Back</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br/>
                     <!-- /.content-header -->
 
                         <!-- Main content -->
-                        <div class="content">
-                        <div class="container-fluid" style="align-items: center">
-                            <div class="card" style="width: 50%; margin-left: 25%">
-                                {{-- <div class="card card-primary">
+                    <div class="content">
+                        <div class="container-fluid" style="align-items: center" align="center">
+                            <div class="card" style="width: 90%">
+                                <div class="card card-primary">
                                     <div class="card-header">
-                                    <h3 class="card-title">Tambah User</h3>
-                                </div> --}}
-                                    <!-- /.card-header -->
-                                    <!-- form start -->
-                                    {{-- <form action="{{ route('store') }}" method="POST">
-                                        @csrf
-                                        <div class="card-body">
-                                            <div class="form-group">
-                                                <label for="first_name">Nama Depan</label>
-                                                <input name="first_name" type="text" class="form-control" id="first_name" placeholder="John" required/>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="last_name">Nama Belakang</label>
-                                                <input name="last_name" type="text" class="form-control" id="last_name" placeholder="Doe" required/>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="email">Email</label>
-                                                <input name="email" type="email" class="form-control" id="email" placeholder="john.doe@mail.com" required/>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="gender">Gender</label>
-                                                <select class="form-control" name="gender">
-                                                    <option value="Tidak Diketahui">Tidak Diketahui</option>
-                                                    <option value="Perempuan">Perempuan</option>
-                                                    <option value="Laki-Laki">Laki-Laki</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    <!-- /.card-body -->
-                                    <div class="card-footer">
-                                        <button style="width:100%" type="submit" class="btn btn-primary">Submit</button>
+                                        <h3 class="card-title">People</h3>
                                     </div>
-                                    </form> --}}
                                     
                                     <div class="content-header">
                                         <div class="container-fluid">
-                                            <div class="row mb-2">
-                                                <div style="text-align:center;width:100%;">
-                                                    <h1 class="m-0 text-dark">SOAP & REST API</h1>
+                                            <div class="row mb-2" >
+                                                <div style="text-align: left;">
+                                                    <p class="m-0 text-dark"><?php if($person=="-"){ echo "No Data"; }else{ echo "<pre>".$person."</pre>"; }?></p>
                                                 </div><!-- /.col -->
                                             </div><!-- /.row -->
                                         </div><!-- /.container-fluid -->
                                     </div>
-                                    <form action="{{ route('client2POST') }}" method="POST">
-                                        @csrf
-                                        <div class="card-body">
-                                            <div class="form-group">
-                                                <label for="name">Nama</label>
-                                                <input name="nama" type="text" class="form-control" id="nama" placeholder="John" required/>
-                                            </div>
-                                        </div>
-                                        <!-- /.card-body -->
-                                        <div class="card-footer">
-                                            <button style="width:100%" type="submit" class="btn btn-primary">Client 2</button>
-                                        </div>
-                                    </form>
-                                    <form action="{{ route('server2') }}" method="GET">
-                                        <div class="card-footer">
-                                            <button style="width:100%" type="submit" class="btn btn-primary">Server 2</button>
-                                        </div>
-                                    </form>
-                                    <div class="content-header">
-                                        <div class="container-fluid">
-                                            <div class="row mb-2">
-                                                <div style="text-align:center;width:100%;">
-                                                    <h1 class="m-0 text-dark">OData</h1>
-                                                </div><!-- /.col -->
-                                            </div><!-- /.row -->
-                                        </div><!-- /.container-fluid -->
-                                    </div>
-                                    <form action="{{ route('allPeople') }}" method="GET">
-                                        @csrf
-                                        {{-- <div class="card-body">
-                                            <div class="form-group">
-                                                <label for="name">Nama</label>
-                                                <input name="nama" type="text" class="form-control" id="nama" placeholder="John" required/>
-                                            </div>
-                                        </div> --}}
-                                        <!-- /.card-body -->
-                                        <div class="card-footer">
-                                            <button style="width:100%" type="submit" class="btn btn-primary">Ke Halaman Odata</button>
-                                        </div>
-                                    </form>
-                                    
-                                    <div class="content-header">
-                                        <div class="container-fluid">
-                                            <div class="row mb-2">
-                                                <div style="text-align:center;width:100%;">
-                                                    <h1 class="m-0 text-dark">XML & JSON</h1>
-                                                </div><!-- /.col -->
-                                            </div><!-- /.row -->
-                                        </div><!-- /.container-fluid -->
-                                    </div>
-                                    <form action="{{ route('xml') }}" method="GET">
-                                        @csrf
-                                        {{-- <div class="card-body">
-                                            <div class="form-group">
-                                                <label for="name">Nama</label>
-                                                <input name="nama" type="text" class="form-control" id="nama" placeholder="John" required/>
-                                            </div>
-                                        </div> --}}
-                                        <!-- /.card-body -->
-                                        <div class="card-footer">
-                                            <button style="width:100%" type="submit" class="btn btn-primary">Ke Halaman XML dan JSON</button>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
-                            {{-- <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Data User</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Action</th>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Gender</th>
-                                                <th>Email</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @if(isset($data))
-                                                @foreach ($data as $d)
-                                                    <tr>
-                                                        <td align="center">
-                                                            <button class="btn btn-primary" style="background-color: red; border-color:red; width:30%" onclick="window.location = ('{{ route('destroy',$d->id) }}')">Hapus</button>&nbsp;&nbsp;
-                                                            <button class="btn btn-primary" style="background-color: green; border-color:green; width:30%" onclick="window.location = ('{{ route('update',$d->id) }}')">Ubah</button>
-                                                        </td>
-                                                        <td>{{ $d->id }}</td>
-                                                        <td>{{ $d->first_name . ' ' . $d->last_name }}</td>
-                                                        <td>{{ $d->gender }}</td>
-                                                        <td>{{ $d->email }}</td>
-                                                    </tr>
-                                                @endforeach
-                                            @endif
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.card-body -->
-                            </div> --}}
                             <!-- /.row -->
                         </div><!-- /.container-fluid -->
                     </div>

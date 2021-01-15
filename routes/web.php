@@ -18,6 +18,10 @@ Route::post('/store', 'App\Http\Controllers\UserController@store')->name('store'
 Route::get('/destroy/{id}', 'App\Http\Controllers\UserController@destroy')->name('destroy');
 Route::get('/update/{id}', 'App\Http\Controllers\UserController@update')->name('update');
 Route::post('/save', 'App\Http\Controllers\UserController@save')->name('save');
+Route::post('/Odata', 'App\Http\Controllers\UserController@Odata')->name('Odata');
+Route::get('/allPeople', 'App\Http\Controllers\UserController@allPeople')->name('allPeople');
+Route::get('/xml', 'App\Http\Controllers\UserController@xml')->name('xml');
+Route::get('/json', 'App\Http\Controllers\UserController@json')->name('json');
 
 Route::post('/client2POST', 'App\Http\Controllers\UserController@client2POST')->name('client2POST');
 Route::get('/client2/{nama}', 'App\Http\Controllers\UserController@client2')->name('client2');

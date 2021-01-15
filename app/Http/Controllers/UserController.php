@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use SaintSystems\OData\ODataClient;
 
 class UserController extends Controller
 {
@@ -118,6 +119,60 @@ class UserController extends Controller
     public function server2()
     {
         return view('server2');
+    }
+
+    public function Odata(Request $request)
+    {
+        $p = $request->nama;
+        $odataClient = new ODataClient("https://services.odata.org/V4/TripPinService");
+        $people = $odataClient->from('People')->select('FirstName','LastName','Gender')->get();
+        try {
+            $person = $odataClient->from('People')->find($p);
+            $lengkap = $person->FirstName.' '.$person->LastName.' - '.$person->Gender;
+        } catch (Exception $e) {
+            $lengkap = "-";
+        }
+        $send = [
+            'person'=>$lengkap
+        ];
+        return view('odata')->with($send);
+    }
+
+    public function allPeople()
+    {
+        $odataClient = new ODataClient("https://services.odata.org/V4/TripPinService");
+        try {
+            $person = $odataClient->from('People')->get();
+            $lengkap = json_encode($person,JSON_PRETTY_PRINT);
+        } catch (Exception $e) {
+            $lengkap = "-";
+        }
+        $send = [
+            'person'=>$lengkap
+        ];
+        return view('odata')->with($send);
+    }
+
+    public function xml()
+    {
+        $xmlFile = simplexml_load_file("test.xml");
+        $send = [
+            'json'=>0,
+            'xml'=>1,
+            'xmlFile'=>$xmlFile
+        ];
+        return view('xml_json')->with($send);
+    }
+    
+    public function json()
+    {
+        $jsonFile = file_get_contents("test.json");
+        $send = [
+            'json'=>1,
+            'xml'=>0,
+            'jsonFile'=>$jsonFile
+        ];
+        return view('xml_json')->with($send);
     }
 
     ///////////////////End of API/////////////////////

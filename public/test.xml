@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <dataset>
+        <user>
+            <nama>Celine Lieshiana</nama>
+            <nrp>1772005</nrp>
+            <email>celine05@gmail.com</email>
+            <jenis_kelamin>perempuan</jenis_kelamin>
+        </user>
+        <user>
+            <nama>Cunda Amanda</nama>
+            <nrp>1772052</nrp>
+            <email>cunda52@gmail.com</email>
+            <jenis_kelamin>perempuan</jenis_kelamin>
+        </user>
+        <user>
+            <nama>Natasya Dey</nama>
+            <nrp>1772041</nrp>
+            <email>dey41@gmail.com</email>
+            <jenis_kelamin>perempuan</jenis_kelamin>
+        </user>
+        <user>
+            <nama>Roy Parsaoran</nama>
+            <nrp>1772044</nrp>
+            <email>roy44@gmail.com</email>
+            <jenis_kelamin>laki-laki</jenis_kelamin>
+        </user>
+        <user>
+            <nama>Febrina</nama>
+            <nrp>1772006</nrp>
+            <email>febrina06@gmail.com</email>
+            <jenis_kelamin>perempuan</jenis_kelamin>
+        </user>
+        <user>
+            <nama>Nicolavickh</nama>
+            <nrp>1772016</nrp>
+            <email>ocin16@gmail.com</email>
+            <jenis_kelamin>laki-laki</jenis_kelamin>
+        </user>
+    </dataset>
